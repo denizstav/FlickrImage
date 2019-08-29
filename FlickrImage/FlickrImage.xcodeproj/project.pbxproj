@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		EB002CF02318529A008216C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB002CEF2318529A008216C5 /* AppDelegate.swift */; };
-		EB002CF22318529A008216C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB002CF12318529A008216C5 /* ViewController.swift */; };
 		EB002CF52318529A008216C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB002CF32318529A008216C5 /* Main.storyboard */; };
 		EB002CF72318529B008216C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB002CF62318529B008216C5 /* Assets.xcassets */; };
 		EB002CFA2318529B008216C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB002CF82318529B008216C5 /* LaunchScreen.storyboard */; };
 		EB002D052318529B008216C5 /* FlickrImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB002D042318529B008216C5 /* FlickrImageTests.swift */; };
 		EB002D102318529B008216C5 /* FlickrImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB002D0F2318529B008216C5 /* FlickrImageUITests.swift */; };
+		EB002D2323185422008216C5 /* ListPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB002D2223185422008216C5 /* ListPhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		EB002CEC2318529A008216C5 /* FlickrImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB002CEF2318529A008216C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB002CF12318529A008216C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB002CF42318529A008216C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB002CF62318529B008216C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB002CF92318529B008216C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		EB002D0B2318529B008216C5 /* FlickrImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB002D0F2318529B008216C5 /* FlickrImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageUITests.swift; sourceTree = "<group>"; };
 		EB002D112318529B008216C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB002D2223185422008216C5 /* ListPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,11 @@
 		EB002CEE2318529A008216C5 /* FlickrImage */ = {
 			isa = PBXGroup;
 			children = (
+				EB002D1E2318532B008216C5 /* Services */,
+				EB002D1D2318531F008216C5 /* Models */,
+				EB002D1F23185335008216C5 /* Workers */,
+				EB002D202318533D008216C5 /* Scenes */,
 				EB002CEF2318529A008216C5 /* AppDelegate.swift */,
-				EB002CF12318529A008216C5 /* ViewController.swift */,
 				EB002CF32318529A008216C5 /* Main.storyboard */,
 				EB002CF62318529B008216C5 /* Assets.xcassets */,
 				EB002CF82318529B008216C5 /* LaunchScreen.storyboard */,
@@ -123,6 +126,43 @@
 				EB002D112318529B008216C5 /* Info.plist */,
 			);
 			path = FlickrImageUITests;
+			sourceTree = "<group>";
+		};
+		EB002D1D2318531F008216C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB002D1E2318532B008216C5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EB002D1F23185335008216C5 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		EB002D202318533D008216C5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EB002D212318537B008216C5 /* ListPhotos */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EB002D212318537B008216C5 /* ListPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				EB002D2223185422008216C5 /* ListPhotosViewController.swift */,
+			);
+			path = ListPhotos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB002CF22318529A008216C5 /* ViewController.swift in Sources */,
 				EB002CF02318529A008216C5 /* AppDelegate.swift in Sources */,
+				EB002D2323185422008216C5 /* ListPhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

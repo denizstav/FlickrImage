@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ListPhotosViewController.swift
 //  FlickrImage
 //
 //  Created by Deniz Tav on 29/08/2019.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ListPhotosViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-
