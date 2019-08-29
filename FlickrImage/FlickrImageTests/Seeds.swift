@@ -12,24 +12,25 @@ import XCTest
 struct Seeds {
     struct SeedPhotos {
         static let firstPhoto = Photo(id: "12",
-                                      owner: "Deniz Tav",
                                       secret: "secret",
                                       server: "server",
                                       farm: 0,
-                                      title: "Image",
-                                      ispublic: 1,
-                                      isfriend: 1,
-                                      isfamily: 1)
+                                      title: "Image")
         static let secondPhoto = Photo(id: "13",
-                                       owner: "Deniz Tav",
                                        secret: "secret",
                                        server: "server",
                                        farm: 0,
-                                       title: "Image name 2",
-                                       ispublic: 1,
-                                       isfriend: 1,
-                                       isfamily: 1)
+                                       title: "Image name 2")
         
         static let response = FlickerResponse(photos: Photos(page: 0, pages: 0, perpage: 1, total: "total", photo: [firstPhoto, secondPhoto] ) , stat: "ok")
+        
+        static let firstDisplay = ListPhotosModels.FetchPhotos.ViewModel.DisplayedPhoto(image: "imageString", name: "CollectionCell")
+        static let secondDisplay = ListPhotosModels.FetchPhotos.ViewModel.DisplayedPhoto(image: "imageString", name: "CollectionCell")
+        static let thirdDisplay = ListPhotosModels.FetchPhotos.ViewModel.DisplayedPhoto(image: "imageString", name: "CollectionCell")
+        static let fourthDisplay = ListPhotosModels.FetchPhotos.ViewModel.DisplayedPhoto(image: "imageString", name: "CollectionCell")
+        static let fifthDisplay = ListPhotosModels.FetchPhotos.ViewModel.DisplayedPhoto(image: "imageString", name: "CollectionCell")
+        
+        static let displayed = [firstDisplay, secondDisplay, thirdDisplay, fourthDisplay, fifthDisplay]
+        static let photos = ListPhotosModels.FetchPhotos.ViewModel(displayedPhotos: displayed)
     }
 }

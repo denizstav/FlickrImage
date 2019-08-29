@@ -10,14 +10,10 @@ import UIKit
 
 public struct Photo: Codable {
     public var id: String
-    public var owner: String
     public var secret: String
     public var server: String
     public var farm: Int
     public var title: String
-    public var ispublic: Int
-    public var isfriend: Int
-    public var isfamily: Int
     
     public func imageUrl() -> String {
         return "http://farm\(farm).static.flickr.com/\(server)/\(id)_\(secret).jpg"
