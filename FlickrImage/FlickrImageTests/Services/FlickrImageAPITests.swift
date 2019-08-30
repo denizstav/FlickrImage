@@ -32,7 +32,6 @@ class FlickrImageAPITests: XCTestCase {
         waitForExpectations(timeout: 3.0)
         
         // Then
-        print(sut.page)
         XCTAssertEqual(sut.page, 1, "page should be 1 when fetchPhotos() called first time")
     }
     
