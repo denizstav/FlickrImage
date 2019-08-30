@@ -31,5 +31,5 @@ public class PhotosWorker {
     }
 }
 protocol PhotosStoreProtocol {
-    func fetchPhotos(text: String, completionHandler: @escaping (FlickerResponse?) -> Void)
+    func fetchPhotos(text: String, completionHandler: @escaping (PhotosResponse?) -> Void)
 }

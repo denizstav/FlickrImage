@@ -46,6 +46,9 @@ public final class ListPhotoLayout: UICollectionViewFlowLayout {
         set {
         }
         get {
+            guard numberOfColumns != 1 else {
+                return CGSize(width: contentWidth - cellPadding, height: cellPadding + photoHeight)
+            }
             let columnWidth = (contentWidth - cellPadding * (numberOfColumns - 1)) / CGFloat(numberOfColumns)
             let columnHeight = cellPadding + photoHeight
             return CGSize(width: columnWidth, height: columnHeight)

@@ -22,7 +22,7 @@ struct Seeds {
                                        farm: 0,
                                        title: "Image name 2")
         
-        static let response = FlickerResponse(photos: Photos(page: 0, pages: 0, perpage: 1, total: "total", photo: [firstPhoto, secondPhoto] ) , stat: "ok")
+        static let response = PhotosResponse(photos: Photos(page: 0, pages: 0, perpage: 1, total: "total", photo: [firstPhoto, secondPhoto] ) , stat: "ok")
         
         static let firstDisplay = ListPhotosModels.FetchPhotos.ViewModel.DisplayedPhoto(image: "imageString", name: "CollectionCell")
         static let secondDisplay = ListPhotosModels.FetchPhotos.ViewModel.DisplayedPhoto(image: "imageString", name: "CollectionCell")

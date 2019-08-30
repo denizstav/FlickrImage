@@ -12,7 +12,7 @@ class PhotosWorkerTests: XCTestCase {
     
     // MARK: - Subject under test
     var sut: PhotosWorker!
-    static var testResponse: FlickerResponse!
+    static var testResponse: PhotosResponse!
     
     // MARK: - Test lifecycle
     override func setUp()
@@ -40,7 +40,7 @@ class PhotosWorkerTests: XCTestCase {
         var fetchPhotosCalled = false
         
         // MARK: Spied methods
-        override func fetchPhotos(text: String, completionHandler: @escaping (FlickerResponse?) -> Void)
+        override func fetchPhotos(text: String, completionHandler: @escaping (PhotosResponse?) -> Void)
         {
             fetchPhotosCalled = true
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {

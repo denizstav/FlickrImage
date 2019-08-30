@@ -23,7 +23,8 @@ class ListPhotosViewController: UIViewController, ListPhotosDisplayLogic, UIColl
     fileprivate let indicatorHeight: CGFloat = 50
     fileprivate let startLoadingAtLast: Int = 2
     fileprivate let cellIdentifier: String = "PhotoCollectionCell"
-    
+    fileprivate let titleText: String = "Flickr Images"
+
     // MARK: - Variables
     var searchText = ""
     var loadMore = false
@@ -74,7 +75,7 @@ class ListPhotosViewController: UIViewController, ListPhotosDisplayLogic, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "Flickr Images"
+        title = titleText
     }
     
     // MARK: - Business Logic

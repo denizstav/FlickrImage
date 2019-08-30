@@ -13,10 +13,12 @@ final class PhotoCollectionCell: UICollectionViewCell {
     @IBOutlet fileprivate weak var containerView: UIView!
     @IBOutlet fileprivate weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    
+
+    fileprivate let cellCornerRadius: CGFloat = 6.0
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        containerView.layer.cornerRadius = 6
+        containerView.layer.cornerRadius = cellCornerRadius
         containerView.layer.masksToBounds = true
         imageView.image = nil
     }
@@ -25,6 +27,10 @@ final class PhotoCollectionCell: UICollectionViewCell {
         didSet {
             imageView.image = nil
             if let photo = photo {
+                guard let image = photo.image else {
+                    return
+                }
+                imageView.loadImage(fromURL: image)
                 nameLabel.text = photo.name
             }
         }

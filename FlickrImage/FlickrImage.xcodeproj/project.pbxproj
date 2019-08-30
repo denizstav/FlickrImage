@@ -75,6 +75,7 @@
 		EB002D4223186246008216C5 /* ListPhotosInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosInteractorTest.swift; sourceTree = "<group>"; };
 		EB002D4423186253008216C5 /* ListPhotosPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosPresenterTests.swift; sourceTree = "<group>"; };
 		EB002D4623186261008216C5 /* ListPhotosViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosViewControllerTests.swift; sourceTree = "<group>"; };
+		EB002D4B23188CA9008216C5 /* FlickrImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				EB002D24231854AD008216C5 /* FlickrImageAPI.swift */,
+				EB002D4B23188CA9008216C5 /* FlickrImageCache.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -373,6 +375,7 @@
 				EB002D3723185E86008216C5 /* ListPhotosInteractor.swift in Sources */,
 				EB002D3B23185EA4008216C5 /* ListPhotosPresenter.swift in Sources */,
 				EB002D2D231855E2008216C5 /* Photos.swift in Sources */,
+				EB002D4C23188CA9008216C5 /* FlickrImageCache.swift in Sources */,
 				EB002D2B231855B5008216C5 /* Photo.swift in Sources */,
 				EB002D3D23185EB3008216C5 /* PhotoCollectionCell.swift in Sources */,
 				EB002D27231854D6008216C5 /* PhotosWorker.swift in Sources */,

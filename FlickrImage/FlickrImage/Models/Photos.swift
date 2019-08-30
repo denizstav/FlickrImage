@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FlickerResponse: Codable {
+struct PhotosResponse: Codable {
     let photos: Photos
     let stat: String
 }
