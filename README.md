@@ -5,8 +5,8 @@ Flickr Image project is an application contains a search page where users can en
 **[Getting Started](#getting-started)**<br>
 **[Decisions](#decisions)**<br>
 **[Architecture](#architecture)**<br>
-**[Image Caching Solution](#image_caching_solution)**<br>
-**[Future Work](#future_work)**<br>
+**[Image Caching Solution](#image-caching-solution)**<br>
+**[Future Work](#future-work)**<br>
 **[References](#references)**<br>
 
 ## Getting Started
