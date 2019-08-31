@@ -43,6 +43,8 @@ class ListPhotosInteractorTest: XCTestCase {
         var presentFetchedPhotosCalled = false
         var presentLoadingCalled = false
         var hideLoadingCalled = false
+        var presentErrorCalled = false
+        var hideErrorCalled = false
         
         // MARK: Spied methods
         func presentFetchedPhotos(response: ListPhotosModels.FetchPhotos.Response) {
@@ -55,6 +57,14 @@ class ListPhotosInteractorTest: XCTestCase {
         
         func hideLoading() {
             hideLoadingCalled = true
+        }
+        
+        func presentErrorView() {
+            presentErrorCalled = true
+        }
+        
+        func hideErrorView() {
+            hideErrorCalled = true
         }
     }
     
@@ -70,6 +80,16 @@ class ListPhotosInteractorTest: XCTestCase {
         {
             fetchPhotosCalled = true
             completionHandler([Seeds.SeedPhotos.firstPhoto, Seeds.SeedPhotos.secondPhoto])
+        }
+    }
+    
+    class PhotosWorkerEmptyResultSpy: PhotosWorker
+    {
+        // MARK: Spied methods
+        
+        override func fetchPhotos(completionHandler: @escaping ([Photo]?) -> Void)
+        {
+            completionHandler([])
         }
     }
     
@@ -92,5 +112,22 @@ class ListPhotosInteractorTest: XCTestCase {
         XCTAssert(listPhotosPresentationLogicSpy.presentFetchedPhotosCalled, "FetchPhotos() should ask presenter to format Photos result")
         XCTAssert(listPhotosPresentationLogicSpy.presentLoadingCalled, "FetchPhotos() should ask presenter to show loading")
         XCTAssert(listPhotosPresentationLogicSpy.hideLoadingCalled, "FetchPhotos() should ask presenter to hide loading")
+        XCTAssert(listPhotosPresentationLogicSpy.hideErrorCalled, "FetchPhotos() should ask presenter to hide error view")
+    }
+    
+    func testFetchPhotosShouldAskPresenterToShowErrorView()
+    {
+        // Given
+        let listPhotosPresentationLogicSpy = ListPhotosPresentationLogicSpy()
+        sut.presenter = listPhotosPresentationLogicSpy
+        let photosWorkerSpy = PhotosWorkerEmptyResultSpy(photosStore: FlickrImageAPI())
+        sut.photosWorker = photosWorkerSpy
+        
+        // When
+        let request = ListPhotosModels.FetchPhotos.Request(text: "Cat")
+        sut.fetchPhotos(request: request)
+        
+        // Then
+        XCTAssert(listPhotosPresentationLogicSpy.presentErrorCalled, "FetchPhotos() should ask presenter to show error")
     }
 }

@@ -175,6 +175,31 @@ class ListPhotosViewControllerTests: XCTestCase {
         XCTAssertNil(sut.presentedViewController, "DisplayLoading should make loading invisible")
     }
     
+    func testHideErrorShouldHideErrorView()
+    {
+        // Given
+        loadView()
+        
+        // When
+        sut.hideErrorView()
+        
+        // Then
+        XCTAssertTrue(sut.errorView.isHidden, "HideErrorView should make error invisible")
+    }
+    
+    func testdisplayErrorShouldDisplayErrorView()
+    {
+        // Given
+        loadView()
+        
+        // When
+        sut.displayErrorView(text: "test")
+        
+        // Then
+        XCTAssertFalse(sut.errorView.isHidden, "HideErrorView should make error visible")
+        XCTAssertEqual(sut.errorLabel.text, "test")
+    }
+    
     func testShouldConfigureTableViewCellToDisplayOrder()
     {
         loadView()

@@ -12,9 +12,12 @@ protocol ListPhotosPresentationLogic {
     func presentFetchedPhotos(response: ListPhotosModels.FetchPhotos.Response)
     func presentLoading()
     func hideLoading()
+    func presentErrorView()
+    func hideErrorView()
 }
 
 public class ListPhotosPresenter: ListPhotosPresentationLogic {
+    fileprivate let errorText: String = "Sorry, No Result\nTry rewording your search or entering a new keyword."
     weak var viewController: ListPhotosDisplayLogic?
     
     // MARK: - Fetch photos
@@ -37,5 +40,13 @@ public class ListPhotosPresenter: ListPhotosPresentationLogic {
     // MARK: - Hide Loading
     func hideLoading() {
         viewController?.hideLoading()
+    }
+    
+    func presentErrorView() {
+        viewController?.displayErrorView(text: errorText)
+    }
+    
+    func hideErrorView() {
+        viewController?.hideErrorView()
     }
 }

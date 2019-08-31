@@ -12,6 +12,8 @@ protocol ListPhotosDisplayLogic: class {
     func displayFetchedPhotos(viewModel: ListPhotosModels.FetchPhotos.ViewModel)
     func displayLoading()
     func hideLoading()
+    func displayErrorView(text: String)
+    func hideErrorView()
 }
 
 class ListPhotosViewController: UIViewController, ListPhotosDisplayLogic, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
@@ -42,6 +44,8 @@ class ListPhotosViewController: UIViewController, ListPhotosDisplayLogic, UIColl
     // MARK: - IBOutlets
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var errorView: UIView!
+    @IBOutlet var errorLabel: UILabel!
     
     // MARK: - Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -71,6 +75,8 @@ class ListPhotosViewController: UIViewController, ListPhotosDisplayLogic, UIColl
         loadingIndicator.style = UIActivityIndicatorView.Style.gray
         loadingIndicator.startAnimating();
         loading.view.addSubview(loadingIndicator)
+        
+        searchBar.becomeFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,6 +105,15 @@ class ListPhotosViewController: UIViewController, ListPhotosDisplayLogic, UIColl
     
     func hideLoading() {
         dismiss(animated: false, completion: nil)
+    }
+    
+    func displayErrorView(text: String) {
+        errorLabel.text = text
+        errorView.isHidden = false
+    }
+    
+    func hideErrorView() {
+        errorView.isHidden = true
     }
 }
 // MARK: - CollectionView

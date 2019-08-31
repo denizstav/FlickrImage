@@ -31,6 +31,11 @@ public class ListPhotosInteractor: ListPhotosBusinessLogic {
                 self?.photos.append(photo)
             }
             let response = ListPhotosModels.FetchPhotos.Response(photos: self?.photos ?? [])
+            if photos?.count ?? 0 > 0 {
+                self?.presenter?.hideErrorView()
+            } else {
+                self?.presenter?.presentErrorView()
+            }
             self?.presenter?.presentFetchedPhotos(response: response)
             self?.presenter?.hideLoading()
         }

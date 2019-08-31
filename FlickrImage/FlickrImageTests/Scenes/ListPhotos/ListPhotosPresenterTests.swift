@@ -43,6 +43,8 @@ class ListPhotosPresenterTests: XCTestCase {
         var displayFetchedPhotosCalled = false
         var displayLoadingCalled = false
         var hideLoadingCalled = false
+        var displayErrorCalled = false
+        var hideErrorCalled = false
         
         // MARK: Argument expectations
         
@@ -63,6 +65,14 @@ class ListPhotosPresenterTests: XCTestCase {
         func hideLoading() {
             hideLoadingCalled = true
         }
+        
+        func displayErrorView(text: String) {
+            displayErrorCalled = true
+        }
+        
+        func hideErrorView() {
+            hideErrorCalled = true
+        }
     }
     
     // MARK: - Tests
@@ -79,10 +89,14 @@ class ListPhotosPresenterTests: XCTestCase {
         sut.presentFetchedPhotos(response: response)
         sut.presentLoading()
         sut.hideLoading()
+        sut.hideErrorView()
+        sut.presentErrorView()
         
         // Then
         XCTAssert(listPhotosDisplayLogicSpy.displayFetchedPhotosCalled, "Presenting fetched photos should ask view controller to display them")
         XCTAssert(listPhotosDisplayLogicSpy.displayLoadingCalled, "Presenting loading should ask view controller to display loading")
         XCTAssert(listPhotosDisplayLogicSpy.hideLoadingCalled, "Hiding loading should ask view controller to hide loading")
+        XCTAssert(listPhotosDisplayLogicSpy.hideErrorCalled, "Hiding error should ask view controller to hide error")
+        XCTAssert(listPhotosDisplayLogicSpy.displayErrorCalled, "Presenting error should ask view controller to display error")
     }
 }
