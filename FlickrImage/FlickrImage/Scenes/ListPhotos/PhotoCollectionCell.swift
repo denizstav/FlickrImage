@@ -20,6 +20,8 @@ final class PhotoCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         containerView.layer.cornerRadius = cellCornerRadius
         containerView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = cellCornerRadius
+        imageView.layer.masksToBounds = true
         imageView.image = nil
     }
     
