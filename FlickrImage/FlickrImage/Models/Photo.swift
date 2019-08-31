@@ -15,7 +15,7 @@ public struct Photo: Codable {
     public var farm: Int
     public var title: String
     
-    public func imageUrl() -> String {
+    public func photoImageUrl() -> String {
         return "https://farm\(farm).static.flickr.com/\(server)/\(id)_\(secret).jpg"
     }
 }

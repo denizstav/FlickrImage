@@ -79,11 +79,6 @@ class ListPhotosViewController: UIViewController, ListPhotosDisplayLogic, UIColl
         searchBar.becomeFirstResponder()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        title = titleText
-    }
-    
     // MARK: - Business Logic
     func searchImage(text: String) {
         let request = ListPhotosModels.FetchPhotos.Request(text: text)

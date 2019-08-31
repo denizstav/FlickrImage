@@ -26,7 +26,7 @@ public class ListPhotosPresenter: ListPhotosPresentationLogic {
         var displayePhotos: [ListPhotosModels.FetchPhotos.ViewModel.DisplayedPhoto] = []
         for photo in response.photos {
             let displayedPhoto = ListPhotosModels.FetchPhotos.ViewModel.DisplayedPhoto(
-                image: photo.imageUrl(),
+                image: photo.photoImageUrl(),
                 name: photo.title)
             displayePhotos.append(displayedPhoto)
         }

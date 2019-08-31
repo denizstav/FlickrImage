@@ -11,19 +11,19 @@ import Foundation
 public class FlickrImageAPI: PhotosStoreProtocol {
     let apiKey: String
     let baseUrl: String
-    var previosText: String
+    var previousText: String
     var page: Int
     
     init() {
         apiKey = "3e7cc266ae2b0e0d78e279ce8e361736"
         baseUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&format=json&nojsoncallback=1&safe_search=1&text="
-        previosText = ""
+        previousText = ""
         page = 1
     }
     
     func fetchPhotos(text: String, completionHandler: @escaping (PhotosResponse?) -> Void) {
-        if previosText != text {
-            previosText = text
+        if previousText != text {
+            previousText = text
             page = 1
         } else {
             page += 1
